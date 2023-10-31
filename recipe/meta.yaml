@@ -1,5 +1,5 @@
 {% set name = "webauthn" %}
-{% set version = "1.10.1" %}
+{% set version = "1.11.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/webauthn-{{ version }}.tar.gz
-  sha256: 94fc8265cccce88e1e43dc2008f3d8bb1f05fdd547246efa1be8ef684a6c3a7b
+  sha256: 24eda57903897369797f52a377f8c470e7057e79da5525779d0720a9fcc11926
 
 build:
   noarch: python
