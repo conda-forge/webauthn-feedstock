@@ -1,0 +1,47 @@
+schema_version: 1
+
+context:
+  name: webauthn
+  version: 2.7.1
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/webauthn-${{ version }}.tar.gz
+  sha256: 2a1ebbfffc4a83e31d3db5d69113944bc49d05fae77770c2d4e388386cb9656e
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - pyasn1 >=0.6.2
+    - cbor2 >=5.6.5
+    - cryptography >=44.0.2
+    - pyopenssl >=25.0.0
+
+tests:
+  - python:
+      imports:
+        - webauthn
+      pip_check: true
+      python_version: ${{ python_min }}.*
+
+about:
+  summary: Pythonic WebAuthn
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://github.com/duo-labs/py_webauthn
+
+extra:
+  recipe-maintainers:
+    - thewchan
