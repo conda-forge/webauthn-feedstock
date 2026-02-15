@@ -21,7 +21,7 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - asn1crypto >=1.5.1
+    - pyasn1 >=0.6.2
     - cbor2 >=5.6.5
     - cryptography >=44.0.2
     - pyopenssl >=25.0.0
