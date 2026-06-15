@@ -21,20 +21,24 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools
+    - setuptools >=61.0
+    - wheel
   run:
     - python >=${{ python_min }}
     - pyasn1 >=0.6.2
-    - cbor2 >=5.6.5
-    - cryptography >=44.0.2
-    - pyopenssl >=25.0.0
+    - pyasn1-modules >=0.4.2
+    - cbor2 >=5.6.5,<6.0.0
+    - cryptography >=46.0.0
+    - pyopenssl >=26.0.0
 
 tests:
   - python:
       imports:
         - webauthn
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   summary: Pythonic WebAuthn
