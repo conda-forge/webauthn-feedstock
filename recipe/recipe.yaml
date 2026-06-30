@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: webauthn
-  version: "2.8.0"
+  version: "3.0.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/webauthn-${{ version }}.tar.gz
-  sha256: cb3a49abbddb3a757e60c58f8b2b10ca20ef451935b97dfd7e9beedaabff7b10
+  sha256: 324e54e1f6eeef486623b5d90df6fcd74ae04ff0c137d2b818a8f709b6ca3ab8
 
 build:
   number: 0
